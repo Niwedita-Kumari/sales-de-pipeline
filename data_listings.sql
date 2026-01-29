@@ -6,7 +6,7 @@ SELECT COUNT(DISTINCT 1) FROM sales_train; -- 5. Unique col1
 SELECT COUNT(DISTINCT 2) FROM sales_train; -- 6. Unique col2
 SELECT COUNT(*) FROM sales_train WHERE 1 IS NULL; -- 7. Null col1
 SELECT COUNT(*) FROM sales_train WHERE 2 IS NULL; -- 8. Null col2
-SELECT COUNT(*) FROM sales_train GROUP BY 1 HAVING COUNT(*) > 10; -- 9. Frequent col1
+SELECT COUNT(*) FROM sales_train GROUP BY 1 HAVING COUNT(*) > 20; -- 9. Frequent col1
 SELECT AVG(3), MIN(3), MAX(3), STDDEV(3) FROM sales_train; -- 10. Col3 stats
 SELECT 1, SUM(3) OVER (ORDER BY 1) FROM sales_train LIMIT 10; -- 11. Running total
 SELECT *, ROW_NUMBER() OVER (ORDER BY 3 DESC) FROM sales_train LIMIT 10; -- 12. Rank values
