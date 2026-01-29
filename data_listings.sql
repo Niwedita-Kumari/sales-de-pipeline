@@ -98,14 +98,14 @@ GROUP BY date
 ORDER BY daily_total DESC
 LIMIT 1;
 
--- 12. SLOW MOVING PRODUCTS (< 5 orders)
+-- 12. SLOW MOVING PRODUCTS (< 10 orders)
 SELECT 
     product_id,
     COUNT(*) as order_count,
     SUM(item_total) as total_revenue
 FROM sales_train 
 GROUP BY product_id
-HAVING COUNT(*) < 5
+HAVING COUNT(*) < 10
 ORDER BY total_revenue;
 
 -- 13. CUMULATIVE REVENUE TREND (Financial Reporting)
